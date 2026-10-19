@@ -1,0 +1,90 @@
+<div class="modebar" role="group" aria-label="View"><button id="vSlides" aria-pressed="true">Presentation</button><button id="vReport" aria-pressed="false">Full report</button></div>
+<div class="deck" id="deck"><div id="slideBox"></div><div class="deckctl"><button id="sPrev">&larr; Previous</button><span class="num" id="sPos"></span><button id="sNext">Next &rarr;</button></div></div>
+<div class="wrap" id="report" hidden>
+<header style="display:grid;gap:14px">
+  <div class="eyebrow" id="eyebrow"></div>
+  <h1 id="h1"></h1>
+  <p class="lede" id="lede"></p>
+  <div class="kpis" id="kpis"></div>
+</header>
+<nav class="idx" aria-label="Sections">
+  <span class="seg" role="group" aria-label="Clock"><button id="v80" aria-pressed="true">80 minute limit</button><button id="vlong" aria-pressed="false">With 5 hour reruns</button></span>
+  <a href="#results">Results</a><a href="#time">Time</a><a href="#sbs">Side by side</a><a href="#modes">Failure modes</a><a href="#matrix">Matrix</a><a href="#playwrap">Traces</a><a href="#cards">Every miss</a><a href="#method">Method</a>
+</nav>
+
+<section id="results">
+  <div class="eyebrow">Results</div>
+  <h2 id="resh"></h2>
+  <p class="foot" id="resnote"></p>
+  <div class="grid2"><div class="panel"><div class="bars" id="bars"></div></div><div class="panel"><div class="tbl"><table id="eff"></table></div></div></div>
+</section>
+
+<section id="time">
+  <div class="eyebrow">Where the time goes</div>
+  <h2 id="timeh"></h2>
+  <div class="grid2">
+    <div class="panel"><h3>At 80 minutes</h3><ul class="tight" id="timelist"></ul></div>
+    <div class="panel" id="longpanel"><h3>Rerun at 5 hours</h3><ul class="tight" id="longlist"></ul></div>
+  </div>
+  <div class="tbl"><table id="ltab"></table></div>
+  <div id="ltxwrap"><h3 style="margin-top:1.4em">Inside the long turns</h3><p id="ltxnote"></p><div id="ltxbox"></div></div>
+</section>
+
+<section id="sbs">
+  <div class="eyebrow">Side by side</div>
+  <h2 id="sbsh"></h2>
+  <p id="sbsp"></p>
+  <p class="foot" id="sbsfoot"></p>
+  <div class="tbl"><table id="behav"></table></div>
+  <div id="sbslist" style="display:grid;gap:8px"></div>
+</section>
+
+<section id="modes">
+  <div class="eyebrow">Failure modes</div>
+  <h2 id="modesh"></h2>
+  <p class="foot" id="modesnote"></p>
+  <div id="modelist"></div>
+</section>
+
+<section id="matrix">
+  <div class="eyebrow">Matrix</div>
+  <h2>Every task, every model, every run.</h2>
+  <p class="foot" id="mxnote"></p>
+  <div class="legend"><span><span class="dot" style="background:var(--good)"></span>full marks</span><span><span class="dot" style="background:var(--mid)"></span>0.5 to below full</span><span><span class="dot" style="background:var(--bad)"></span>below 0.5</span></div>
+  <div class="tbl"><table id="mxt"></table></div>
+  <h3>Head to head (full marks in 2 or 3 of 3 runs)</h3>
+  <div class="tbl"><table id="h2h"></table></div>
+</section>
+
+<section id="playwrap" style="border-bottom:0">
+  <div class="eyebrow">Trace player</div>
+  <h2>Every step, with what the model said, what it ran and what came back.</h2>
+  <p class="foot">Answer values from the task's grader, emails and personal names are masked as [value], [email] and [name]. Everything else is the run as recorded. Pick a story, or open any run from the matrix, a card or the side-by-side section.</p>
+  <div class="pl" id="player" tabindex="-1">
+    <div class="pl-tabs" id="pltabs"></div>
+    <div class="pl-head"><span class="pl-dots"><span style="background:#ff5f57"></span><span style="background:#febc2e"></span><span style="background:#28c840"></span></span><span id="plhead"></span></div>
+    <div class="pl-body"><div class="pl-list" id="pllist"></div><div class="pl-detail" id="pldetail"></div></div>
+    <div class="pl-foot"><button id="prev">&larr; prev</button><span class="num" id="plpos"></span><button id="next">next &rarr;</button><input type="range" id="plslider" min="0" max="0" value="0" aria-label="Step"><button class="go" id="plmom">Jump to the moment</button><button class="go" id="plfull" aria-pressed="false">Full detail: off</button><select id="pick" aria-label="Choose a run"></select></div>
+    <div style="padding:0 16px 14px" class="ctl" id="same"></div>
+  </div>
+</section>
+
+<section id="cards">
+  <div class="eyebrow">Every miss</div>
+  <h2 id="cardsh"></h2>
+  <div class="ctl"><label for="mf" class="foot">Filter</label><select id="mf"></select></div>
+  <div id="clist" style="display:grid;gap:8px"></div>
+</section>
+
+<section id="method">
+  <div class="eyebrow">Method</div>
+  <h2>Same harness, same tasks, disclosed end to end.</h2>
+  <div class="grid2">
+    <div class="panel"><h3>Denominators</h3><div class="tbl"><table id="ledger"></table></div></div>
+    <div class="panel"><h3>Run policy</h3><ul class="tight" id="policy"></ul></div>
+    <div class="panel"><h3>What this does not establish</h3><ul class="tight" id="notest"></ul></div>
+    <div class="panel"><h3>Provenance</h3><ul class="tight" id="prov"></ul></div>
+    <div class="panel" style="grid-column:1/-1"><h3>Questions about the method</h3><div class="tbl"><table id="objtab"></table></div></div>
+  </div>
+</section>
+</div>
