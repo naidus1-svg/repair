@@ -1,0 +1,79 @@
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+
+# Virtualenvs — never commit; `pip install -e .` recreates it
+.venv/
+venv/
+
+# Secrets — .env.example is the only committed template
+.env
+.env.*
+!.env.example
+
+# OS / editor cruft
+.DS_Store
+*.swp
+
+# Local run artifacts — never committed (large, and often task/eval data)
+runs/
+cycles/
+dataos_qc_runs/
+
+# Task corpora and eval data — proprietary/business-sensitive, never committed.
+# The one exception is the tiny bundled smoke-test fixture, explicitly un-ignored below.
+pipeline/data/*
+!pipeline/data/sample_corpus/
+!pipeline/data/sample_corpus/**
+
+# Calibration goldens (specs/calibration/) — full task data (source docs, real
+# eval trajectories) used for --calibrate drift checks. Same sensitivity as any
+# other task corpus; calibration is opt-in and works fine without this present
+# (see docs/CLAUDE.md "Calibration opt-in") — never commit it.
+pipeline/specs/calibration/
+
+# Editor-backup / stray artifacts that occasionally show up in specs/
+*.orig
+
+# QC-internal verification artifacts (LLM prompt/response files, proposed prompt-remediation
+# diffs) that quote a task's own Expected: values by design. Never solver-facing, never
+# committed, never written under a task directory in the first place -- see
+# deterministic-checks/semantic-consistency-design-2026-09-14.md section 9 and
+# deterministic-checks/prompt-remediation-design-2026-09-14.md section 6 (Answer-key safety).
+deterministic-checks/_ekw_verification_reports/
+
+# qc_batch_build.py local output (author emails, batch plans)
+qc_batches/
+
+# Personal GitHub safety exclusions
+pipeline/data/sample_corpus/
+_full_svcpc_results.json
+_prompt.txt
+pipeline/.env.example
+
+# Additional internal traces and confidential archives
+companybench-model-eval/report/data/models/*/traces.json.gz
+deliverables/svc-pc-19-0-0-corpus-fix-2026-09-17/Company-Shared-Drive-Accounting.zip
+
+# Claude session files and traces anywhere in the project
+**/sessions/
+**/trajectory.json
+**/rollout-*.jsonl
+
+# Internal model-evaluation datasets, prompts, and run outputs
+companybench-model-eval/report/data/
+companybench-model-eval/baseline_perrun.csv
+companybench-model-eval/tasks.json
+
+# Internal task deliverables, audits, and source inventories
+deliverables/
+
+# Internal review reports
+ROUND62-ROW*-REPORT.md
+SUMMARY.md
+
+# Internal model evaluation results
+companybench-model-eval/report/repro/argon_long.csv
+companybench-model-eval/report/repro/argon_main.csv
