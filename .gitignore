@@ -46,34 +46,3 @@ deterministic-checks/_ekw_verification_reports/
 
 # qc_batch_build.py local output (author emails, batch plans)
 qc_batches/
-
-# Personal GitHub safety exclusions
-pipeline/data/sample_corpus/
-_full_svcpc_results.json
-_prompt.txt
-pipeline/.env.example
-
-# Additional internal traces and confidential archives
-companybench-model-eval/report/data/models/*/traces.json.gz
-deliverables/svc-pc-19-0-0-corpus-fix-2026-09-17/Company-Shared-Drive-Accounting.zip
-
-# Claude session files and traces anywhere in the project
-**/sessions/
-**/trajectory.json
-**/rollout-*.jsonl
-
-# Internal model-evaluation datasets, prompts, and run outputs
-companybench-model-eval/report/data/
-companybench-model-eval/baseline_perrun.csv
-companybench-model-eval/tasks.json
-
-# Internal task deliverables, audits, and source inventories
-deliverables/
-
-# Internal review reports
-ROUND62-ROW*-REPORT.md
-SUMMARY.md
-
-# Internal model evaluation results
-companybench-model-eval/report/repro/argon_long.csv
-companybench-model-eval/report/repro/argon_main.csv
